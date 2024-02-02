@@ -1,0 +1,54 @@
+# CATEGORIES
+
+### POST CATEGORY
+POST http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name": "category 1",
+  "description": "This is category one"
+}
+
+
+### GET BY ID
+GET http://localhost:8080/category/b5fc6090-fe2a-4325-92cb-18baefb031f8 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+### GET ALL
+GET http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+# PRODUCTS
+
+### CREATE A NEW PRODUCT
+POST http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "name":"iphone xr",
+  "description": "product 1 description",
+  "price": 100,
+  "image_url": "http://google.com",
+  "category_id": "b5fc6090-fe2a-4325-92cb-18baefb031f8"
+}
+
+### LIST ALL PRODUCTS
+GET  http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### LIST BY CATEGORY ID
+GET  http://localhost:8080/product/eb5dbed4-c8b9-4a06-b023-df48aef0ea00 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### LIST BY PRODUCT ID
+GET  http://localhost:8080/product/eb296629-1fce-43ca-8413-1b3bddd07106 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
