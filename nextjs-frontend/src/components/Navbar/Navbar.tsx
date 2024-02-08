@@ -35,7 +35,7 @@ export async function Navbar() {
         }}
       >
         <SelectCategory categories={categories} />
-
+        <h1>testing</h1>
         <Box
           component={Link}
           href={"/products"}
