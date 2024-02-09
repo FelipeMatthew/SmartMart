@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Smart Mart",
   description: "Full cycle e-commerce",
 };
-
+// testing
 export default function RootLayout({
   children,
 }: Readonly<{
