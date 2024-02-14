@@ -5,22 +5,19 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import Image from "next/legacy/image";
 import { Product } from "../../../models";
 import { ProductQuantityForm } from "./ProductQuantityForm";
+import { ProductService } from "@/services/product.service";
 
 
-const product: Product = {
-    id: '1',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  };
+
 
 async function ProductDetailPage({
   params
 }: {
   params: { productId: string };
 }) {
+
+  const product = await new ProductService().getProduct(params.productId);
+
   return (
     <Grid2 container spacing={2}>
       <Grid2
