@@ -12,34 +12,18 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import { Product } from "../../models";
 
-const products: Product[] = [
-  {
-    id: '1',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  },
-  {
-    id: '2',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  },
-  {
-    id: '3',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  }
-];
+async function getProducts(): Promise<Product[]> {
+  const response = await fetch(`${process.env.URL}/product`, { // Cache time
+    next: {
+      revalidate: 10,
+    }
+  });
+  return response.json();
+}
 
 async function ListProductsPage() {
+
+  const products = await getProducts();
 
   return (
     <Grid2 container spacing={2}>
