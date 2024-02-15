@@ -3,8 +3,21 @@ import { Product } from "@/models";
 export class ProductService {
 
   // Get all products
-  async getProducts({ search }: { search: string | undefined }): Promise<Product[]> {
-    const response = await fetch(`${process.env.CATALOG_API_URL}/product`, { // Cache time
+  async getProducts(
+    { search, category_id } :
+    { 
+      search: string | undefined,
+      category_id: string | undefined,
+    }) :
+    Promise<Product[]> {
+
+    let url = `${process.env.CATALOG_API_URL}/product`
+
+    if(category_id) {
+      url += `category/${category_id}`
+    }
+
+    const response = await fetch(url, { // Cache time
       next: {
         revalidate: 10,
       }
