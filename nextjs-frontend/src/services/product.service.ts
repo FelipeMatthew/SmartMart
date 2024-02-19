@@ -14,7 +14,7 @@ export class ProductService {
     let url = `${process.env.CATALOG_API_URL}/product`
 
     if(category_id) {
-      url += `category/${category_id}`
+      url += `/category/${category_id}`
     }
 
     const response = await fetch(url, { // Cache time
