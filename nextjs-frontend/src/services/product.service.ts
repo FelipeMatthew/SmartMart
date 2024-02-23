@@ -34,6 +34,16 @@ export class ProductService {
     return data;
   }
 
+  async getProductsByIds(productIds: string[]): Promise<Product[]> {
+      const responses = await Promise.all(productIds.map((productId) => fetch(`${process.env.CATALOG_API_URL}/product/${productId}`, {
+        next: {
+          revalidate: 1,
+        }
+      }))) 
+
+      return Promise.all(responses.map(response => response.json()))
+    }
+
   // Get Product by id
   async getProduct(productId: string): Promise<Product> {
     const response = await fetch(`${process.env.CATALOG_API_URL}/product/${productId}`, { // Cache time

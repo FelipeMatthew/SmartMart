@@ -15,50 +15,20 @@ import Link from "next/link";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Total } from "../../components/Total";
 import React from "react";
+import { CartServiceFactory } from "@/services/cart.service";
+import { ProductService } from "@/services/product.service";
+import { removeItemFromCartAction } from "@/server-actions/cart.action";
 
-const products = [
-  {
-    id: '1',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  },
-  {
-    id: '2',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  },
-  {
-    id: '3',
-    name: 'product 1',
-    description: 'description about product 1',
-    price: 100,
-    image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-    category_id: '1'
-  }
-];
-
-const cart = {
-  items: [
-    {
-      product_id: "1",
-      quantity: 2,
-      total: 200,
-    },
-    {
-      product_id: "2",
-      quantity: 3,
-      total: 300,
-    },
-  ],
-  total: 500
-}
 async function MyCartPage() {
+
+  const cart = CartServiceFactory.create().getCart();
+
+  const productService =  new ProductService();
+
+  const products =  await productService.getProductsByIds(
+    cart.items.map((item) => item.product_id)
+  )
+
   return (
     <Box>
       <Typography variant="h3">
@@ -104,7 +74,7 @@ async function MyCartPage() {
                   <ListItem
                     sx={{ display: "flex", justifyContent: "end", p: 0 }}
                   >
-                    <form>
+                    <form action={removeItemFromCartAction}>
                       <input type="hidden" name="index" value={index} />
                       <Button
                         color="error"
