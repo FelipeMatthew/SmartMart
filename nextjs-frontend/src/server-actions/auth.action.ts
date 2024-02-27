@@ -17,3 +17,9 @@ export async function loginAction(formData: FormData) {
 
   redirect(redirect_to || '/products')
 }
+
+export async function logoutAction() {
+  const authService = new AuthService();
+  authService.logout();
+  redirect('/login')
+}

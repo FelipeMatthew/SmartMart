@@ -14,9 +14,8 @@ async function LoginPage({
   const { redirect_to  = "/products" } = searchParams;
   const authService = new AuthService();
   const user = authService.getUser();
-  const isTokenExpired = authService.isTokenExpired();
 
-  if(user && !isTokenExpired) {
+  if(user && !authService.isTokenExpired()) {
     redirect(redirect_to);
   }
 

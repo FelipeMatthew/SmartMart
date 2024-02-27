@@ -10,56 +10,12 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { Order, OrderStatus } from "../../models";
-
-
-const orders: Order[] = [
-  {
-  id: '1',
-  status: OrderStatus.PENDING,
-  created_at: "2020-20-20T00:00:00:000Z",
-  items: [
-    {
-      id: 1,
-      product: {
-        id: '1',
-        name: 'product 1',
-        description: 'description about product 1',
-        price: 100,
-        image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-        category_id: '1',
-      },
-      quantity: 5,
-      price: 300,
-    },
-  ],
-  total: 10000,
-},
-{
-  id: '1',
-  status: OrderStatus.PENDING,
-  created_at: "2020-20-20T00:00:00:000Z",
-  items: [
-    {
-      id: 1,
-      product: {
-        id: '1',
-        name: 'product 1',
-        description: 'description about product 1',
-        price: 100,
-        image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-        category_id: '1',
-      },
-      quantity: 5,
-      price: 300,
-    },
-  ],
-  total: 10000,
-},
-]
-
+import { OrderServiceFactory } from "@/services/order.service";
 
 export async function MyOrdersListPage() {
   
+  const orders =  await OrderServiceFactory.create().getOrders();
+
   return (
     <Box>
       <Typography variant="h4">Meus pedidos</Typography>

@@ -10,31 +10,12 @@ import {
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { Order, OrderStatus } from "../../../models";
 import { Total } from "../../../components/Total";
-
-const order: Order = {
-  id: '1',
-  status: OrderStatus.PENDING,
-  created_at: "2020-20-20T00:00:00:000Z",
-  items: [
-    {
-      id: 1,
-      product: {
-        id: '1',
-        name: 'product 1',
-        description: 'description about product 1',
-        price: 100,
-        image_url: 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
-        category_id: '1',
-      },
-      quantity: 5,
-      price: 300,
-    },
-  ],
-  total: 10000,
-}
-
+import { OrderServiceFactory } from "@/services/order.service";
 
 async function MyOrderDetail({ params }: { params: { orderId: string } }) {  
+
+  const order =  await OrderServiceFactory.create().getOrder(params.orderId);
+
   return (
     <Box>
       <Grid2 container spacing={2}>
