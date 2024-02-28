@@ -9,3 +9,4 @@ services:
       - "15672:15672"
     volumes:
       - .docker/rabbitmq:/var/lib/rabbitmq
+    

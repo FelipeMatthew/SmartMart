@@ -9,13 +9,13 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import { Order, OrderStatus } from "../../models";
-import { OrderServiceFactory } from "@/services/order.service";
+import { OrderStatus } from "../../models";
+import { OrderServiceFactory } from "../../services/order.service";
+
+
 
 export async function MyOrdersListPage() {
-  
-  const orders =  await OrderServiceFactory.create().getOrders();
-
+  const orders = await OrderServiceFactory.create().getOrders();
   return (
     <Box>
       <Typography variant="h4">Meus pedidos</Typography>

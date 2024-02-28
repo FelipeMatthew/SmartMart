@@ -10,12 +10,11 @@ async function LoginPage({
 }: {
   searchParams: { redirect_to?: string };
 }) {
-
-  const { redirect_to  = "/products" } = searchParams;
+  const { redirect_to = "/products" } = searchParams;
   const authService = new AuthService();
   const user = authService.getUser();
-
-  if(user && !authService.isTokenExpired()) {
+  
+  if (user && !authService.isTokenExpired()) {
     redirect(redirect_to);
   }
 

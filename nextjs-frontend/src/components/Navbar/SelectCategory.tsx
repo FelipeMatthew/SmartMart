@@ -4,7 +4,7 @@ import { FormControl, MenuItem, Select } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Category } from "../../models";
-import { searchProducts } from "@/utils";
+import { searchProducts } from "../../utils";
 
 export function SelectCategory({ categories }: { categories: Category[] }) {
   const router = useRouter();
@@ -17,7 +17,7 @@ export function SelectCategory({ categories }: { categories: Category[] }) {
         sx={{ backgroundColor: grey[400] }}
         value={searchParams.get('category_id') || '0'}
         onChange={(event) => {
-          const search = searchParams.get('search');
+          const search =  searchParams.get('search');
           const category_id = event.target.value as string;
           searchProducts(router, search, category_id);
         }}

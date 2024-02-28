@@ -5,9 +5,8 @@ import (
 	"encoding/json"
 	"log/slog"
 
-	"github.com/FelipeMatthew/SmartMart/payment-service/internal/entity"
-	"github.com/FelipeMatthew/SmartMart/payment-service/pkg/rabbitmq"
-
+	"github.com/devfullcycle/imersao17/payment/internal/entity"
+	"github.com/devfullcycle/imersao17/payment/pkg/rabbitmq"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 

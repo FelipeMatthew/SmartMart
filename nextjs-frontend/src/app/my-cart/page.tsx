@@ -15,20 +15,16 @@ import Link from "next/link";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Total } from "../../components/Total";
 import React from "react";
-import { CartServiceFactory } from "@/services/cart.service";
-import { ProductService } from "@/services/product.service";
-import { removeItemFromCartAction } from "@/server-actions/cart.action";
+import { CartServiceFactory } from "../../services/cart.service";
+import { ProductService } from "../../services/product.service";
+import { removeItemFromCartAction } from "../../server-actions/cart.action";
 
 async function MyCartPage() {
-
   const cart = CartServiceFactory.create().getCart();
-
-  const productService =  new ProductService();
-
-  const products =  await productService.getProductsByIds(
+  const productService = new ProductService();
+  const products = await productService.getProductsByIds(
     cart.items.map((item) => item.product_id)
-  )
-
+  );
   return (
     <Box>
       <Typography variant="h3">

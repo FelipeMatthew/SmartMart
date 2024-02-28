@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
-import { ThemeProvider, Box } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import theme from "../theme";
 import { Navbar } from "../components/Navbar/Navbar";
+
 const inter = Inter({ subsets: ["latin"] });
 
-// HEAD
 export const metadata: Metadata = {
-  title: "Smart Mart",
-  description: "Full cycle e-commerce",
+  title: "Code Commerce",
+  description: "Uma Full Cycle shop",
 };
-// testing
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={inter.className} style={{ backgroundColor: "#121212" }}>
@@ -30,7 +29,7 @@ export default function RootLayout({
                 sx={{
                   flexGrow: 1,
                   color: "text.primary",
-                  bgcolor: "background.default",
+                  bgcolor: "#121212",
                   mt: ["122px", "135px", "146px"],
                   p: 3,
                 }}

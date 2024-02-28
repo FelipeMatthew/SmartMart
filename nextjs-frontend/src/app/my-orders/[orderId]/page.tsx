@@ -8,14 +8,14 @@ import {
   Typography,
 } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Order, OrderStatus } from "../../../models";
+import { OrderStatus } from "../../../models";
 import { Total } from "../../../components/Total";
-import { OrderServiceFactory } from "@/services/order.service";
+import { OrderServiceFactory } from "../../../services/order.service";
 
-async function MyOrderDetail({ params }: { params: { orderId: string } }) {  
+async function MyOrderDetail({ params }: { params: { orderId: string } }) {
 
-  const order =  await OrderServiceFactory.create().getOrder(params.orderId);
-
+  const order = await OrderServiceFactory.create().getOrder(params.orderId);
+  
   return (
     <Box>
       <Grid2 container spacing={2}>

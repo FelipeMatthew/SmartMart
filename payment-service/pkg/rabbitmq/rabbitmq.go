@@ -7,7 +7,7 @@ import (
 )
 
 func OpenChannel() (*amqp.Channel, error) {
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://admin:admin@localhost:5672/")
 	if err != nil {
 		panic(err)
 	}
@@ -15,7 +15,7 @@ func OpenChannel() (*amqp.Channel, error) {
 	if err != nil {
 		panic(err)
 	}
-	return ch, err
+	return ch, nil
 }
 
 func Consume(ch *amqp.Channel, out chan amqp.Delivery, queue string) error {
@@ -28,11 +28,9 @@ func Consume(ch *amqp.Channel, out chan amqp.Delivery, queue string) error {
 		false,
 		nil,
 	)
-
 	if err != nil {
 		return err
 	}
-
 	for msg := range msgs {
 		out <- msg
 	}
@@ -42,8 +40,8 @@ func Consume(ch *amqp.Channel, out chan amqp.Delivery, queue string) error {
 func Publish(ctx context.Context, ch *amqp.Channel, body, exName string) error {
 	err := ch.PublishWithContext(
 		ctx,
-		exName, // exchange
-		"",
+		exName,
+		"PaymentDone",
 		false,
 		false,
 		amqp.Publishing{
@@ -51,10 +49,8 @@ func Publish(ctx context.Context, ch *amqp.Channel, body, exName string) error {
 			Body:        []byte(body),
 		},
 	)
-
 	if err != nil {
 		return err
 	}
-
 	return nil
 }

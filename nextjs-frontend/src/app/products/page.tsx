@@ -10,9 +10,8 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
 import Image from "next/legacy/image";
+import { ProductService } from "../../services/product.service";
 import { Product } from "../../models";
-import { ProductService } from "@/services/product.service";
-
 
 async function getProducts({
   search,
@@ -49,9 +48,8 @@ async function getProducts({
 async function ListProductsPage({
   searchParams,
 }: {
-  searchParams: { search?: string, category_id?: string }
+  searchParams: { search?: string; category_id?: string };
 }) {
-
   const products = await getProducts({
     search: searchParams.search,
     category_id: searchParams.category_id,

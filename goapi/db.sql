@@ -43,3 +43,23 @@ VALUES ("7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9j0k","Product 1","Description 1", 100,
 ("fbe61a31-7bb4-4e53-9268-9138d4d038d3","Product 18","Description 18", 1800, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/18.png"),
 ("506610a1-ba99-4c14-a7b2-3c52877e8ec2","Product 19","Description 19", 1900, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/19.png"),
 ("eb296629-1fce-43ca-8413-1b3bddd07106","Product 20","Description 20", 2000, "6b4c28f4-6831-495a-9444-19c93452faa3", "http://localhost:9000/products/20.png");
+
+
+
+
+-- INSERT INTO `smartmart`.`products` (`id`, `name`, `description`, `price`, `category_id`, `image_url`) VALUES
+-- ("7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9j0k", "Relogio de Pulso Analógico", "Relogio de pulso analógico com mostrador de fácil leitura.", 100, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/1.png"),
+-- ("66805003-f9a2-4772-b577-d5ff66207707", "Relogio de Pulso Digital", "Relogio de pulso digital com várias funções e cronômetro integrado.", 200, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/2.png"),
+-- ("121829b9-e9f9-4ca9-bd14-b087afedd587", "Relogio de Parede Clássico", "Relogio de parede clássico em estilo antigo com números romanos.", 300, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/3.png"),
+-- ("ef3d9a49-4c73-4192-97dd-55e21c0e2707", "Relogio de Mesa Decorativo", "Relogio de mesa decorativo com design elegante e movimento silencioso.", 400, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/4.png"),
+-- ("6d602b3a-1e72-4b03-a29c-14095e57027b", "Relogio Despertador Moderno", "Relogio despertador moderno com alarme ajustável e luz de fundo.", 500, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/5.png"),
+-- ("dad6f8fb-3149-4d0b-861e-03d29c6accf0", "Relogio de Bolso Vintage", "Relogio de bolso vintage com corrente elegante e movimento mecânico.", 600, "efba52a5-b6b7-463b-b78a-ccc5c094fbbb", "http://localhost:9000/products/6.png"),
+-- ("7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9j01", "Smartphone Android", "Smartphone Android com câmera de alta resolução e tela de 6 polegadas.", 500, "829c29cd-d812-49dc-866c-c794df5e6b32", "http://localhost:9000/smartphones/1.png"),
+-- ("66805003-f9a2-4772-b577-d5ff66207701", "iPhone 12", "iPhone 12 com chip A14 Bionic e tela Super Retina XDR.", 1000, "829c29cd-d812-49dc-866c-c794df5e6b32", "http://localhost:9000/smartphones/2.png"),
+-- ("121829b9-e9f9-4ca9-bd14-b087afedd581", "Samsung Galaxy S21", "Samsung Galaxy S21 com processador Exynos 2100 e tela Dynamic AMOLED 2X.", 1200, "829c29cd-d812-49dc-866c-c794df5e6b32", "http://localhost:9000/smartphones/3.png"),
+-- ("ef3d9a49-4c73-4192-97dd-55e21c0e2702", "Xiaomi Redmi Note 10", "Xiaomi Redmi Note 10 com processador Snapdragon 678 e câmera quad de 48 MP.", 800, "829c29cd-d812-49dc-866c-c794df5e6b32", "http://localhost:9000/smartphones/4.png"),
+-- ("6d602b3a-1e72-4b03-a29c-14095e57021b", "OnePlus 9", "OnePlus 9 com chip Snapdragon 888 e tela Fluid AMOLED de 120Hz.", 1100, "829c29cd-d812-49dc-866c-c794df5e6b32", "http://localhost:9000/smartphones/5.png"),
+-- ("7f8c9d8e-9f0a-1b2c-3d4e-5f6g7h8i9j02", "Smart TV 4K", "Smart TV 4K com tela de 55 polegadas e HDR para uma experiência imersiva.", 1500, "770ca038-33d1-4047-9962-b61e5c502189", "http://localhost:9000/eletronics/1.png"),
+-- ("66805003-f9a2-4772-b577-d5ff36207707", "Console de Videogame", "Console de videogame com suporte a resolução 4K e controle sem fio.", 400, "770ca038-33d1-4047-9962-b61e5c502189", "http://localhost:9000/eletronics/2.png"),
+-- ("121829b9-e9f9-4ca9-bd14-b082fedd587a", "Fone de Ouvido Bluetooth", "Fone de ouvido Bluetooth com cancelamento de ruído ativo e bateria de longa duração.", 100, "770ca038-33d1-4047-9962-b61e5c502189", "http://localhost:9000/eletronics/3.png"),
+-- ("ef3d9a49-4c73-4192-97dd-55521c0e207a", "Câmera DSLR", "Câmera DSLR profissional com sensor de 24MP e gravação de vídeo em Full HD.", 800, "770ca038-33d1-4047-9962-b61e5c502189", "http://localhost:9000/eletronics/4.png");

@@ -9,20 +9,18 @@ import {
 } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import CheckIcon from "@mui/icons-material/Check";
+import { Order, OrderStatus } from "../../../../models";
 import { Total } from "../../../../components/Total";
-import { OrderServiceFactory } from "@/services/order.service";
-
-
+import { OrderServiceFactory } from "../../../../services/order.service";
 
 async function CheckoutSuccessPage({
   params,
 }: {
   params: { orderId: string };
 }) {
-
   const orderService = OrderServiceFactory.create();
   const order = await orderService.getOrder(params.orderId);
-
+  console.log(order);
   return (
     <Box>
       <Grid2 container spacing={2}>

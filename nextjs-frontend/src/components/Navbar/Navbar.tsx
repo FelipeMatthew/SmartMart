@@ -6,8 +6,8 @@ import { SelectCategory } from "./SelectCategory";
 import Image from "next/legacy/image";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { CategoryService } from "@/services/category.service";
-import { AuthService } from "@/services/auth.service";
+import { CategoryService } from "../../services/category.service";
+import { AuthService } from "../../services/auth.service";
 
 export async function Navbar() {
   const categories = await new CategoryService().getCategories();
@@ -16,10 +16,9 @@ export async function Navbar() {
     <AppBar position="fixed">
       <Toolbar sx={{ backgroundColor: "background.paper" }}> 
         <Image
-          style={{margin: "10px 0"}}
           src="/logo.png"
-          width={220.66}
-          height={70.66}
+          width={147.66}
+          height={63.66}
           alt="logo"
           priority
         />

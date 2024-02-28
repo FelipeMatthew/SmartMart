@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Repositório do front-end feito com Next.js (front-end do ecommerce)
+Repositório do serviço de pagamentos feito com Golang
 
 ## Rodar a aplicação
 
@@ -10,20 +10,13 @@ Repositório do front-end feito com Next.js (front-end do ecommerce)
 
 - Docker
 - Docker Compose
-- Node.js
+- Golang
 
 
-Execute os comandos para subir a aplicação:
-
-```
-npm install
-npm run dev
-```
-
-Rode este comando para levantar o servidor que irá servir as imagens do projeto:
+Execute a aplicação
 
 ```
-npx serve -l 9000 images
+go run cmd/payment/main.go
 ```
 
 ---

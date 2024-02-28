@@ -12,21 +12,15 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { CheckoutForm } from "./CheckoutForm";
 import { redirect } from "next/navigation";
 import { Total } from "../../components/Total";
-import { CartServiceFactory } from "@/services/cart.service";
-import { ProductService } from "@/services/product.service";
-
-
-
+import { CartServiceFactory } from "../../services/cart.service";
+import { ProductService } from "../../services/product.service";
 
 async function CheckoutPage() {
-  
-  const cart = CartServiceFactory.create().getCart(); 
-
-  const productService =  new ProductService();
-
-  const products =  await productService.getProductsByIds(
+  const cart = CartServiceFactory.create().getCart();
+  const productService = new ProductService();
+  const products = await productService.getProductsByIds(
     cart.items.map((item) => item.product_id)
-  )
+  );
 
   if (cart.items.length === 0) {
     return redirect("/my-cart");
@@ -34,7 +28,7 @@ async function CheckoutPage() {
 
   return (
     <Box>
-      <Typography variant="h3" sx={{ mb: '22px' }}>Checkout</Typography>
+      <Typography variant="h3">Checkout</Typography>
       <Grid2 container spacing={3}>
         <Grid2 xs={12} md={6}>
           <CheckoutForm />

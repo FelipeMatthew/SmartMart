@@ -4,7 +4,7 @@ import { InputBase, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { grey } from "@mui/material/colors";
 import { useRouter, useSearchParams } from "next/navigation";
-import { searchProducts } from "@/utils";
+import { searchProducts } from "../../utils";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -56,8 +56,8 @@ export function SearchBar() {
         onSubmit={(event) => {
           event.preventDefault();
           const formData = new FormData(event.target as HTMLFormElement);
-          const search = formData.get('search') as string;
-          const category_id = searchParams.get('category_id');
+          const search = formData.get("search") as string;
+          const category_id = searchParams.get("category_id");
           searchProducts(router, search, category_id);
         }}
       >

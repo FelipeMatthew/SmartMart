@@ -23,3 +23,4 @@ export function searchProducts(
   
     router.push(path);
   }
+  

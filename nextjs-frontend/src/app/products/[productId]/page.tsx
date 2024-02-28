@@ -1,14 +1,10 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { ProductQuantityForm } from "./ProductQuantityForm";
 import DescriptionIcon from "@mui/icons-material/Description";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import Image from "next/legacy/image";
-import { Product } from "../../../models";
-import { ProductQuantityForm } from "./ProductQuantityForm";
-import { ProductService } from "@/services/product.service";
-
-
-
+import { ProductService } from "../../../services/product.service";
 
 async function ProductDetailPage({
   params

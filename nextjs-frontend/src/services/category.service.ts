@@ -1,14 +1,12 @@
-import { Category } from "@/models";
+import { Category } from "../models";
 
 export class CategoryService {
-
-  // Get all Categories
-  async getCategories() : Promise<Category[]> {
-    const response = await fetch(`${process.env.CATALOG_API_URL}/category`, { // Cache time
+  async getCategories(): Promise<Category[]> {
+    const response = await fetch(`${process.env.CATALOG_API_URL}/category`, {
       next: {
-        revalidate: 10,
-      }
-    });
+        revalidate: 1,
+      },
+    }); //revalidate on demand
     return response.json();
   }
 }
