@@ -19,4 +19,4 @@ fixture - serve para realizar a criação de dados falso.
 
 class validator - class transformer - validacao de classes
 nest g guard auth - serviço para tratar o contexto da execução
-npm install ---save @golevelup/nestjs-rabbitmq - rabbit mq installer
+npm install ---save @golevelup/nestjs-rabbitmq - rabbit mq installer -- 

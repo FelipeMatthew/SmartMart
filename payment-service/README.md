@@ -19,7 +19,4 @@ Execute a aplicação
 go run cmd/payment/main.go
 ```
 
----
-Tem dúvidas de como configurar seu ambiente de desenvolvimento? Veja o vídeo: [https://www.youtube.com/watch?v=O33trWxqVC4](https://www.youtube.com/watch?v=O33trWxqVC4)
----
 
