@@ -1,0 +1,1 @@
+recebe uma mensagem via ordem de serviço pelo rabbitmq ao qual o mesmo vai fazer o processamento e ter uma regra se caso o pagamento for abaixo de 100 reais ele irá retornar uma resposta para o rabbitmq de erro na compra
